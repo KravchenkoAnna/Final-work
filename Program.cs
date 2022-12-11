@@ -1,4 +1,5 @@
 ﻿using Lab3.accountFor;
+using Lab3.products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,16 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
-            Account fir = new Account("Bob");
-            Console.WriteLine("Input your ID: ");
+            
+            Console.WriteLine("Input your name: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("Input your accounts ID: ");
             string id = Console.ReadLine();
-            Console.WriteLine("Input your money: ");
+            Console.WriteLine("Input the fulfilling amount: ");
             int money = Convert.ToInt32(Console.ReadLine());
-            fir.FillBalance(id, money);
+            
+            new ProductManager(name).Run(id, money);
 
-            Console.WriteLine(fir.Balance);
         }
     }
 }

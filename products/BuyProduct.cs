@@ -11,10 +11,10 @@ namespace Lab3.products
     {
         public PseudoDataBase DB { get; set; }
         public Account User { get; set; }
-        public BuyProduct(PseudoDataBase db)
+        public BuyProduct(PseudoDataBase db, Account user)
         {
             DB = db;
-            //User = new Account();
+            User = user;
         }
         public string SelectAction()
         {
@@ -24,8 +24,8 @@ namespace Lab3.products
         {
             Console.WriteLine("Enter name of product you want to buy:");
             string name = Console.ReadLine();                        
-            User.allTransactions.Add(new Transaction(-(DB.ReturnPrice(name)), DateTime.Now));
-            Console.WriteLine(User.Balance);
+            User.allTransactions.Add(new Transaction(-DB.ReturnPrice(name), DateTime.Now));
+            Console.WriteLine(User.Owner + "`s balance is " + User.Balance);
             DB.Histories.Add(new History(name));
         }
 

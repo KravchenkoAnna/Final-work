@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab3.accountFor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,11 @@ namespace Lab3.products
     class AddProduct : IProductInterface
     {
         public PseudoDataBase DB { get; set; }
-
-        public AddProduct(PseudoDataBase db)
+        public Account User { get; set; }
+        public AddProduct(PseudoDataBase db, Account user)
         {
             DB = db;
+            User = user;
         }
 
         public string SelectAction()

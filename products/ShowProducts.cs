@@ -23,8 +23,9 @@ namespace Lab3.products
             Console.Write("|");
             for (int i = 0; i < DB.Products.Count; i++)
             {
-                Console.Write(DB.Products[i].Name + "| ");
+                Console.Write(DB.Products[i].Name + " for " + DB.Products[i].Price + "| ");
             }
+            
             Console.WriteLine();
         }
 
