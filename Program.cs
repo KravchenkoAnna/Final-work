@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace Lab3
 {
@@ -19,8 +20,15 @@ namespace Lab3
             string id = Console.ReadLine();
             Console.WriteLine("Input the fulfilling amount: ");
             int money = Convert.ToInt32(Console.ReadLine());
-            
-            new ProductManager(name).Run(id, money);
+
+            ProductManager pm = new ProductManager(name);
+            pm.Run(id, money);
+
+            string fileName = "dataBase.json";
+            string jsonString = JsonSerializer.Serialize(pm);
+            File.WriteAllText(fileName, jsonString);
+
+            Console.WriteLine(File.ReadAllText(fileName));
 
         }
     }

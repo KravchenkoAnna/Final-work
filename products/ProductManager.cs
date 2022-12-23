@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Lab3.products
 {
     class ProductManager
@@ -19,6 +20,7 @@ namespace Lab3.products
             UIs.Add(new ShowProducts(db));
             UIs.Add(new AddProduct(db, TheAccount));
             UIs.Add(new BuyProduct(db, TheAccount));
+            UIs.Add(new CancelClass());
         }
 
         private void Menu()
@@ -41,7 +43,7 @@ namespace Lab3.products
             Console.WriteLine("Balance is " + TheAccount.Balance);
             Console.WriteLine("Select action:");
             int i = 0;
-            while (i < db.Products.Count)
+            while (i < 2/*db.Products.Count*/)
             {                
                 Menu();
                 Action();
