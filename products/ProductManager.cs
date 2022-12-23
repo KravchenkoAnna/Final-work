@@ -31,10 +31,11 @@ namespace Lab3.products
             }
         }
 
-        private void Action()
+        private int Action()
         {            
             int action = Convert.ToInt32(Console.ReadLine());
             UIs[action].Action();
+            return action;
         }
 
         public void Run(string yourID, int money)
@@ -43,10 +44,16 @@ namespace Lab3.products
             Console.WriteLine("Balance is " + TheAccount.Balance);
             Console.WriteLine("Select action:");
             int i = 0;
-            while (i < 2/*db.Products.Count*/)
-            {                
+            int quantity = db.Products.Count;
+            
+            while (i < quantity)
+            {               
                 Menu();
-                Action();
+                int action = Action();                
+                if (action == 3)
+                {
+                    break;
+                }
                 i++;
             }
 

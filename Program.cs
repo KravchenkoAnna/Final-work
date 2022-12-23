@@ -20,16 +20,16 @@ namespace Lab3
             string id = Console.ReadLine();
             Console.WriteLine("Input the fulfilling amount: ");
             int money = Convert.ToInt32(Console.ReadLine());
-
+            
             ProductManager pm = new ProductManager(name);
             pm.Run(id, money);
-
+            
             string fileName = "dataBase.json";
             string jsonString = JsonSerializer.Serialize(pm);
             File.WriteAllText(fileName, jsonString);
-
+            
             Console.WriteLine(File.ReadAllText(fileName));
-
+            
         }
     }
 }
