@@ -18,7 +18,7 @@ namespace Lab3.products
             UIs = new List<IProductInterface>();
             TheAccount = new Account(name);
             UIs.Add(new ShowProducts(db));
-            UIs.Add(new AddProduct(db, TheAccount));
+            UIs.Add(new FillBalance(db, TheAccount));
             UIs.Add(new BuyProduct(db, TheAccount));
             UIs.Add(new CancelClass());
         }
@@ -38,10 +38,12 @@ namespace Lab3.products
             return action;
         }
 
-        public void Run(string yourID, int money)
+        public void Run()
         {
-            TheAccount.FillBalance(yourID, money);
-            Console.WriteLine("Balance is " + TheAccount.Balance);
+            Console.WriteLine("Input your accounts ID: ");
+            string id = Console.ReadLine();
+            TheAccount.Verify(id);
+            Console.WriteLine("Your balance is " + TheAccount.Balance);
             Console.WriteLine("Select action:");
             int i = 0;
             int quantity = db.Products.Count;

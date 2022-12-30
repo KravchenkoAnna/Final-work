@@ -35,7 +35,7 @@ namespace Lab3.accountFor
             accountNumberSeed++;
         }
 
-        private bool Verify(string number)
+        public bool Verify(string number)
         {
             if (string.Equals(number, ID))
             {
@@ -43,18 +43,20 @@ namespace Lab3.accountFor
             }
             else
             {
-                throw new Exception("This is not your accounts ID");
+                Console.WriteLine("That is not your ID. Please try again.");
+                number = Console.ReadLine();
+                return Verify(number);
             }
         }
 
-        public void FillBalance(string yourID, int money)
+        /*public void FillBalance(string yourID, int money)
         {
             if (Verify(yourID))
             {
                 Console.Write(Owner + " ");
                 allTransactions.Add(new Transaction(money, DateTime.Now));
             }
-        }
+        }*/
 
 
 

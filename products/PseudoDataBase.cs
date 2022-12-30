@@ -26,7 +26,7 @@ namespace Lab3.products
         }
 
          public int ReturnPrice(string name)
-        {
+         {
             foreach (var item in Products)
             {
                 if(item.Name == name)
@@ -35,6 +35,6 @@ namespace Lab3.products
                 }
             }
             return 0;
-        }
+         }
     }
 }
