@@ -18,8 +18,6 @@ namespace Lab3.products
         {
             return "3 - exit";
         }
-
-
         
     }
 }

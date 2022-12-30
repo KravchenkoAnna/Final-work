@@ -49,17 +49,6 @@ namespace Lab3.accountFor
             }
         }
 
-        /*public void FillBalance(string yourID, int money)
-        {
-            if (Verify(yourID))
-            {
-                Console.Write(Owner + " ");
-                allTransactions.Add(new Transaction(money, DateTime.Now));
-            }
-        }*/
-
-
-
-
+        
     }
 }
